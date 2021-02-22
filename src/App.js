@@ -1,24 +1,30 @@
 import logo from './logo.svg';
 import './App.css';
+import { Piano, KeyboardShortcuts, MidiNumbers } from 'react-piano';
+import 'react-piano/dist/styles.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    const firstNote = MidiNumbers.fromNote('c3');
+    const lastNote = MidiNumbers.fromNote('f5');
+    const keyboardShortcuts = KeyboardShortcuts.create({
+      firstNote: firstNote,
+      lastNote: lastNote,
+      keyboardConfig: KeyboardShortcuts.HOME_ROW,
+    });
+   
+    return (
+      <Piano
+        noteRange={{ first: firstNote, last: lastNote }}
+        playNote={(midiNumber) => {
+          // Play a given note - see notes below
+        }}
+        stopNote={(midiNumber) => {
+          // Stop playing a given note - see notes below
+        }}
+        width={1000}
+        keyboardShortcuts={keyboardShortcuts}
+      />
+    
   );
 }
 
