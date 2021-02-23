@@ -17,9 +17,13 @@ const keyboardShortcuts = KeyboardShortcuts.create({
   keyboardConfig: KeyboardShortcuts.HOME_ROW,
 });
 
+
+//https://github.com/kevinsqi/react-piano we used this one as the base
+// we didn't use this one, but there is a tutorial for integrating with tone.js https://github.com/lillydinhle/react-piano-component  
+
 function App() {
     const firstNote = MidiNumbers.fromNote('c3');
-    const lastNote = MidiNumbers.fromNote('f5');
+    const lastNote = MidiNumbers.fromNote('f4');
     const keyboardShortcuts = KeyboardShortcuts.create({
       firstNote: firstNote,
       lastNote: lastNote,
@@ -27,6 +31,7 @@ function App() {
     });
    
     return (
+      <div>
       <SoundfontProvider
       instrumentName="acoustic_grand_piano"
       audioContext={audioContext}
@@ -34,7 +39,7 @@ function App() {
       render={({ isLoading, playNote, stopNote }) => (
         <Piano
           noteRange={noteRange}
-          width={300}
+          width={1000}
           playNote={playNote}
           stopNote={stopNote}
           disabled={isLoading}
@@ -43,6 +48,7 @@ function App() {
       )}
     />
     
+      </div>
   );
 }
 
