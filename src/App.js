@@ -2,6 +2,7 @@ import './App.css';
 import { Piano, KeyboardShortcuts, MidiNumbers } from 'react-piano';
 import 'react-piano/dist/styles.css';
 import SoundfontProvider from './SoundFontProvider';
+import VolumeSlider from './components/VolumeSlider';
 
 // webkitAudioContext fallback needed to support Safari
 const audioContext = new (window.AudioContext || window.webkitAudioContext)();
@@ -31,7 +32,9 @@ function App() {
     });
    
     return (
-      <div>
+      <div className="keyboard_case">
+        <h2 className="piano_title">Kiwi Keys</h2>
+        <VolumeSlider/>
       <SoundfontProvider
       instrumentName="acoustic_grand_piano"
       audioContext={audioContext}

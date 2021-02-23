@@ -28,6 +28,26 @@
   color: #61dafb;
 }
 
+.keyboard_case {
+  position: absolute;
+  margin-top: 20%;
+  background-color: #734b43;
+  padding-top: 110px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 25px;
+}
+
+.piano_title {
+  color: greenyellow;
+  font-style: italic;
+}
+
+.volume_slider {
+}
+.volume_label {
+  color: greenyellow;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
