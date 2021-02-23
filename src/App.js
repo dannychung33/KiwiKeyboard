@@ -8,8 +8,8 @@ const audioContext = new (window.AudioContext || window.webkitAudioContext)();
 const soundfontHostname = 'https://d1pzp51pvbm36p.cloudfront.net';
 
 const noteRange = {
-  first: MidiNumbers.fromNote('c3'),
-  last: MidiNumbers.fromNote('f4'),
+  first: MidiNumbers.fromNote('a0'),
+  last: MidiNumbers.fromNote('c8'),
 };
 const keyboardShortcuts = KeyboardShortcuts.create({
   firstNote: noteRange.first,
@@ -22,8 +22,8 @@ const keyboardShortcuts = KeyboardShortcuts.create({
 // we didn't use this one, but there is a tutorial for integrating with tone.js https://github.com/lillydinhle/react-piano-component  
 
 function App() {
-    const firstNote = MidiNumbers.fromNote('c3');
-    const lastNote = MidiNumbers.fromNote('f4');
+    const firstNote = MidiNumbers.fromNote('a0');
+    const lastNote = MidiNumbers.fromNote('c8');
     const keyboardShortcuts = KeyboardShortcuts.create({
       firstNote: firstNote,
       lastNote: lastNote,
@@ -39,7 +39,7 @@ function App() {
       render={({ isLoading, playNote, stopNote }) => (
         <Piano
           noteRange={noteRange}
-          width={1000}
+          width={1800}
           playNote={playNote}
           stopNote={stopNote}
           disabled={isLoading}
