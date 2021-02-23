@@ -1,6 +1,9 @@
 import './App.css';
 import { Piano, KeyboardShortcuts, MidiNumbers } from 'react-piano';
 import 'react-piano/dist/styles.css';
+
+import Drumpad from './components/Drumpad'
+
 import SoundfontProvider from './SoundFontProvider';
 import VolumeSlider from './components/VolumeSlider';
 
@@ -32,7 +35,21 @@ function App() {
     });
    
     return (
+
       <div className="keyboard_case">
+        <Drumpad/>
+        <Piano
+          noteRange={{ first: firstNote, last: lastNote }}
+          playNote={(midiNumber) => {
+            // Play a given note - see notes below
+          }}
+          stopNote={(midiNumber) => {
+            // Stop playing a given note - see notes below
+          }}
+          width={1000}
+          keyboardShortcuts={keyboardShortcuts}
+        />
+
         <h2 className="piano_title">Kiwi Keys</h2>
         <VolumeSlider/>
       <SoundfontProvider
@@ -51,6 +68,7 @@ function App() {
       )}
     />
     
+
       </div>
   );
 }
