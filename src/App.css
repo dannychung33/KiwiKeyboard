@@ -43,6 +43,15 @@
   font-style: italic;
 }
 
+.powerButton {
+  cursor: pointer; 
+  background-color: transparent; 
+  color: #3498db; 
+  border-radius: 50%;
+  font-size: 1em; 
+  box-shadow: 0 6px 6px rgba(11, 29, 5, 0.6); 
+}
+
 .volume_slider {
 }
 .volume_label {
