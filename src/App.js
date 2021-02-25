@@ -3,7 +3,7 @@ import { Piano, KeyboardShortcuts, MidiNumbers } from 'react-piano';
 import 'react-piano/dist/styles.css';
 
 import Drumpad from './components/Drumpad'
-
+import Title from './components/Title'
 import SoundfontProvider from './SoundFontProvider';
 import VolumeSlider from './components/VolumeSlider';
 
@@ -38,8 +38,8 @@ function App() {
 
       <div className="keyboard_case">
         <Drumpad/>
-
-        <h2 className="piano_title">Kiwi Keys</h2>
+        <Title />
+        {/* <h2 className="piano_title">Kiwi Keys</h2> */}
         <VolumeSlider/>
       <SoundfontProvider
       instrumentName="acoustic_grand_piano"
